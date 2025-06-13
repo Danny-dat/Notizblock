@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+    
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Notepad</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/assets.css">
+        <script src="js/templates.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body onload="init()">
+        <aside>
+            <button class="btn" id="btn-new-note" onclick="toggleNewNoteBtn()">
+                <span id="btn-text">Neue Notiz</span>
+                <input id="input-new-note" class="d-none" type="text" maxlength="20" autocomplete="off" placeholder="Titel" onkeydown="addNote(event)" onblur="toggleNewNoteBtn()">
+            </button>
+
+            <button class="btn-folder" onclick="openNoteFolder()">
+                <span class="folder-name">Notizen</span>
+                <div class="amount-display" id="display-note-amount">0</div>
+            </button>
+            <div class="folder" id="note-folder"></div>
+            
+            <button class="btn-folder" onclick="openTrashFolder()">
+                <span class="folder-name">Zulest gelöscht</span>
+                <div class="amount-display" id="display-trash-amount">0</div>
+            </button>
+            <div class="folder" id="trash-folder"></div>
+
+            <button id="theme-toggle-btn" class="btn">Theme wechseln</button>
+        
+            <span>© Danny Menising</span>
+        </aside>
+        <div id="notepad-container"></div>
+    </body>
+
+
+</html>
